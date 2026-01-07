@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>States & Union Territories | Incredible India</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(28, 25, 25); 
+        }
+
+        header {
+            background-color:  rgb(28, 25, 25);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        .states-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 40px;
+        }
+
+        .state-card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .state-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .state-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .state-content {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .state-content h3 {
+            margin: 10px 0 5px;
+            color: black;
+        }
+
+        .state-content p {
+            margin: 0;
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color:  rgb(28, 25, 25);
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>States & Union Territories </h1>
+    <p>Explore India state by state</p>
+</header>
+
+<main class="states-container">
+
+    <!-- State Card -->
+    <div class="state-card" onclick="selectState('Andhra Pradesh')">
+        <img src="assets/images/states/andhra-pradesh.jpeg" alt="Andhra Pradesh">
+        <div class="state-content">
+            <h3>Andhra Pradesh</h3>
+            <p>Capital: Amaravathi</p>
+        </div>
+    </div>
+
+    <div class="state-card" onclick="selectState('Arunachal Pradesh')">
+        <img src="assets/images/states/arunachal-pradesh.jpeg" alt="Arunachal Pradesh">
+        <div class="state-content">
+            <h3>Arunachal Pradesh</h3>
+            <p>Capital: Itanagar</p>
+        </div>
+    </div>
+
+    <div class="state-card"  onclick="selectState('Assam')">
+        <img src="assets/images/states/assam.jpeg" alt="Assam">
+        <div class="state-content">
+            <h3>Assam</h3>
+            <p>Capital: Dispur</p>
+        </div>
+    </div>
+
+    <div class="state-card" onclick="selectState('Bihar')">
+        <img src="assets/images/states/bihar.jpeg" alt="Bihar">
+        <div class="state-content">
+            <h3>Bihar</h3>
+            <p>Capital: Patna</p>
+        </div>
+    </div>
+
+    <div class="state-card" onclick="selectState('Chattisgarh')">
+        <img src="assets/images/states/chattisgarh.jpeg" alt="Chattisgarh">
+        <div class="state-content">
+            <h3>Chattisgarh</h3>
+            <p>Capital: Raipur</p>
+        </div>
+    </div>
+    <div class="state-card" onclick="selectState('Goa')">
+        <img src="assets/images/states/goa.jpeg" alt="Goa">
+        <div class="state-content">
+            <h3>Goa</h3>
+            <p>Capital: Panaji</p>
+        </div>
+    </div>
+
+    <div class="state-card" onclick="selectState('Gujarat')">
+        <img src="assets/images/states/gujarat.jpeg" alt="Gujarat">
+        <div class="state-content">
+            <h3>Gujarat</h3>
+            <p>Capital: Gandhinagar</p>
+        </div>
+    </div>
+
+    <div class="state-card" onclick="selectState('Haryana')">
+        <img src="assets/images/states/haryana.jpeg" alt="Haryana">
+        <div class="state-content">
+            <h3>Haryana</h3>
+            <p>Capital: Chandigarh</p>
+        </div>
+    </div>
+
+    <div class="state-card" onclick="selectState('Himachal Pradesh')">
+        <img src="assets/images/states/himachal-pradesh.jpeg" alt="Himachal Pradesh">
+        <div class="state-content">
+            <h3>Himachal Pradesh</h3>
+            <p>Capital: Shimla</p>
+        </div>
+    </div>
+
+    <div class="state-card" onclick="selectState('Jharkhand')">
+        <img src="assets/images/states/jharkhand.jpeg" alt="Jharkhand">
+        <div class="state-content">
+            <h3>Jharkhand</h3>
+            <p>Capital: Ranchi</p>
+        </div>
+    </div>
+    <div class="state-card" onclick="selectState('Karnataka')">
+        <img src="assets/images/states/karnataka.jpeg" alt="Karnataka">
+        <div class="state-content">
+            <h3>Karnataka</h3>
+            <p>Capital: Bengaluru</p>
+        </div>
+    </div>
+
+    <div class="state-card" onclick="selectState('Kerala')">
+        <img src="assets/images/states/kerala.jpeg" alt="Kerala">
+        <div class="state-content">
+            <h3>Kerala</h3>
+            <p>Capital: Thiruvananthapuram</p>
+        </div>
+    </div>
+
+    <div class="state-card" onclick="selectState('Madhya Pradesh')">
+        <img src="assets/images/states/madhya-pradesh.jpeg" alt="Madhya Pradesh">
+        <div class="state-content">
+            <h3>Madhya Pradesh</h3>
+            <p>Capital: Bhopal</p>
+        </div>
+    </div>
+
+    <div class="state-card" onclick="selectState('Maharashtra')">
+        <img src="assets/images/states/maharashtra.jpeg" alt="Maharashtra">
+        <div class="state-content">
+            <h3>Maharashtra</h3>
+            <p>Capital: Mumbai</p>
+        </div>
+    </div>
+
+    <div class="state-card" onclick="selectState('Manipur')">
+        <img src="assets/images/states/manipur.jpeg" alt="Manipur">
+        <div class="state-content">
+            <h3>Manipur</h3>
+            <p>Capital: Imphal</p>
+        </div>
+    </div>
+    <div class="state-card" onclick="selectState('Meghalaya')">
+        <img src="assets/images/states/meghalaya.jpeg" alt="Meghalaya">
+        <div class="state-content">
+            <h3>Meghalaya</h3>
+            <p>Capital: Shillong</p>
+        </div>
+    </div>
+
+    <div class="state-card" onclick="selectState('Mizoram')">
+        <img src="assets/images/states/mizoram.jpeg" alt="Mizoram">
+        <div class="state-content">
+            <h3>Mizoram</h3>
+            <p>Capital: Aizawl</p>
+        </div>
+    </div>
+
+    <div class="state-card" onclick="selectState('Nagaland')">
+        <img src="assets/images/states/nagaland.jpeg" alt="Nagaland">
+        <div class="state-content">
+            <h3>Nagaland</h3>
+            <p>Capital: Kohima</p>
+        </div>
+    </div>
+
+    <div class="state-card" onclick="selectState('Odisha')">
+        <img src="assets/images/states/odisha.jpeg" alt="Odisha">
+        <div class="state-content">
+            <h3>Odisha</h3>
+            <p>Capital: Bhubaneswar</p>
+        </div>
+    </div>
+
+    <div class="state-card" onclick="selectState('Punjab')">
+        <img src="assets/images/states/punjab.jpeg" alt="Punjab">
+        <div class="state-content">
+            <h3>Punjab</h3>
+            <p>Capital: Chandigarh</p>
+        </div>
+    </div>
+    <div class="state-card" onclick="selectState('Rajasthan')">
+        <img src="assets/images/states/rajasthan.jpeg" alt="Rajasthan">
+        <div class="state-content">
+            <h3>Rajasthan</h3>
+            <p>Capital: Jaipur</p>
+        </div>
+    </div>
+
+    <div class="state-card" onclick="selectState('Sikkim')">
+        <img src="assets/images/states/sikkim.jpeg" alt="Sikkim">
+        <div class="state-content">
+            <h3>Sikkim</h3>
+            <p>Capital: Gangtok</p>
+        </div>
+    </div>
+
+    <div class="state-card" onclick="selectState('Tamil Nadu')">
+        <img src="assets/images/states/tamil-nadu.jpeg" alt="Tamil Nadu">
+        <div class="state-content">
+            <h3>Tamil Nadu</h3>
+            <p>Capital: Chennai</p>
+        </div>
+    </div>
+
+    <div class="state-card" onclick="selectState('Telangana')">
+        <img src="assets/images/states/telangana.jpeg" alt="Telangana">
+        <div class="state-content">
+            <h3>Telangana</h3>
+            <p>Capital: Hyderabad</p>
+        </div>
+    </div>
+
+    <div class="state-card" onclick="selectState('Tripura')">
+        <img src="assets/images/states/tripura.jpeg" alt="Tripura">
+        <div class="state-content">
+            <h3>Tripura</h3>
+            <p>Capital: Agartala</p>
+        </div>
+    </div>
+    <div class="state-card" onclick="selectState('Uttar Pradesh')">
+        <img src="assets/images/states/uttar-pradesh.jpeg" alt="Uttar Pradesh">
+        <div class="state-content">
+            <h3>Uttar Pradesh</h3>
+            <p>Capital: Lucknow</p>
+        </div>
+    </div>
+
+    <div class="state-card" onclick="selectState('Uttarakhand')">
+        <img src="assets/images/states/uttarakhand.jpeg" alt="Uttarakhand">
+        <div class="state-content">
+            <h3>Uttarakhand</h3>
+            <p>Capital: Dehradun</p>
+        </div>
+    </div>
+
+    <div class="state-card" onclick="selectState('West Bengal')">
+        <img src="assets/images/states/west-bengal.jpeg" alt="West Bengal">
+        <div class="state-content">
+            <h3>West Bengal</h3>
+            <p>Capital: Kolkata</p>
+        </div>
+    </div>
+
+    <div class="state-card" onclick="selectState('A&N Islands')">
+        <img src="assets/images/states/andaman.jpeg" alt="A&N Islands">
+        <div class="state-content">
+            <h3>Andaman and Nicobar Islands(UT)</h3>
+            <p>Capital: Port Blair</p>
+        </div>
+    </div>
+
+    <div class="state-card" onclick="selectState('Chandigarh')">
+        <img src="assets/images/states/chandigarh.jpeg" alt="Chandigarh">
+        <div class="state-content">
+            <h3>Chandigarh(UT)</h3>
+            <p>Capital: Chandigarh</p>
+        </div>
+    </div>
+ <div class="state-card" onclick="selectState('Daman and Diu')">
+        <img src="assets/images/states/daman.jpeg" alt="Dadra and Nagar Haveli and Daman and Diu">
+        <div class="state-content">
+            <h3>Dadra and Nagar Haveli and Daman and Diu(UT)</h3>
+            <p>Capital: Daman</p>
+        </div>
+    </div>
+
+    <div class="state-card" onclick="selectState('Delhi')">
+        <img src="assets/images/states/delhi.jpeg" alt="Delhi">
+        <div class="state-content">
+            <h3>Delhi NCT(UT)</h3>
+            <p>Capital: New Delhi</p>
+        </div>
+    </div>
+ <div class="state-card" onclick="selectState('Jammu and Kashmir')">
+        <img src="assets/images/states/jammu-kashmir.jpeg" alt="J&K">
+        <div class="state-content">
+            <h3>Jammu and Kashmir(UT)</h3>
+            <p>Capital: Srinagar and Jammu</p>
+        </div>
+    </div>
+
+    <div class="state-card" onclick="selectState('Ladakh')">
+        <img src="assets/images/states/ladakh.jpeg" alt="Ladakh">
+        <div class="state-content">
+            <h3>Ladakh(UT)</h3>
+            <p>Capital: Leh</p>
+        </div>
+    </div>
+ <div class="state-card" onclick="selectState('Lakshadweep')">
+        <img src="assets/images/states/lakshadweep.jpeg" alt="Lakshadweep">
+        <div class="state-content">
+            <h3>Lakshadweep(UT)</h3>
+            <p>Capital: Kavaratti</p>
+        </div>
+    </div>
+
+    <div class="state-card" onclick="selectState('Puducherry')">
+        <img src="assets/images/states/puducherry.jpeg" alt="Puducherry">
+        <div class="state-content">
+            <h3>Puducherry(UT)</h3>
+            <p>Capital: Puducherry</p>
+        </div>
+    </div>
+</main>
+<script src="js/app.js"></script>
+<footer>
+    © 2025 Incredible India | Tourism Exploration Project
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Places</title>
+  <style>
+    body { font-family:Arial; background: rgb(28, 25, 25); color:white; }
+    h2 { text-align:center; margin:30px 0; }
+    ul { list-style:none; padding:0; text-align:center; }
+    li {
+      background:white;
+      color: rgb(28, 25, 25);
+      margin:10px auto;
+      padding:15px;
+      width:60%;
+      border-radius:8px;
+      cursor:pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h2 id="stateTitle"></h2>
+<!-- Search Bar -->
+<input 
+    type="text" 
+    id="searchInput" 
+    placeholder="Search places..." 
+    style="padding:10px; width:60%; margin:20px auto; display:block; border-radius:8px; border:none; font-size:1rem;">
+
+<ul id="placesList"></ul>
+
+
+<script src="js/app.js"></script>
+<script>
+  loadPlaces();
+</script>
+</body>
+</html>

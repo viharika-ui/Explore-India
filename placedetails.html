@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Place Details | Incredible India</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: rgb(28,25,25);
+      color: white;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 30px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .place-image {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 25px;
+    }
+
+    .details {
+      background: white;
+      color:  rgb(28, 25, 25);
+      border-radius: 10px;
+      padding: 25px;
+      line-height: 1.8;
+    }
+
+    .details p {
+      margin: 10px 0;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background:  rgb(28, 25, 25);
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <h1 id="placeName">Place Name</h1>
+  <!--Further if we want to add add images to all the places we can use the below line-->
+   <!--img id="placeImage" class="place-image" alt="Place Image"> -->
+
+  <div class="details">
+    <p><strong>Timings:</strong> <span id="timings"></span></p>
+    <p><strong>Nearest Station:</strong> <span id="station"></span></p>
+    <p><strong>Distance from Station:</strong> <span id="distance"></span></p>
+    <p><strong>How to Reach:</strong> <span id="transport"></span></p>
+    <p><strong>More Details:</strong> <span id="details"></span></p>
+  </div>
+
+  <a href="places.html" class="back-btn">← Back to Places</a>
+
+</div>
+
+<script src="js/app.js"></script>
+<script>
+  loadPlaceDetails();
+</script>
+
+</body>
+</html>
